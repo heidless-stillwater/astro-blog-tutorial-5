@@ -1,8 +1,38 @@
 ---
+
+// library import
+import { Image } from "@astrojs/image/components";
+
 // component imports
+import Link from "../components/Link.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="About" description="My About Page">
-  <p>hi from About</p>
+  <section class="container about" aria-label="About Me">
+    <Image 
+      src="/images/headshot.jpg"
+      alt="My headshot" 
+      width={200} 
+      height={300} 
+      format="avif"
+      fit="cover"
+      quality={80}
+      aspect-ratio="5:2"
+      class="hero-image"
+    />
+  </section>
+  <div class="container content">
+    <h1 class="h1">My Blog</h1>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat tempore saepe numquam necessitatibus quos, nesciunt accusantium sapiente provident quidem blanditiis aliquid dolores optio molestias aspernatur fugit laboriosam iste, eveniet possimus voluptatum magni. Dolorem, aut beatae? Eligendi animi explicabo corrupti nemo.
+
+    </p>
+    <Link
+      text={"Contact Me"}
+      href={"mailto:lockhart.r@gmail.com"}
+      style="primary"
+    />
+  </div>
 </MainLayout>
+
